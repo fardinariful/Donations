@@ -27,12 +27,12 @@
     </header>
     <main class="container mx-auto lg:px-32 lg:py-20">
         <div class="flex flex-row gap-4 justify-center items-center">
-            <button class="border font-semibold text-xl px-8 py-4 rounded-lg">Donation</button>
-            <button class="border font-semibold text-xl px-8 py-4 rounded-lg">History</button>
+            <button id="all-btn2" class="border font-semibold text-xl px-8 py-4 rounded-lg ">Donation</button>
+            <button id="all-btn3" class="border font-semibold text-xl px-8 py-4 rounded-lg ">History</button>
         </div>
      
         <!-- Donation section -->
-         <section class="">
+         <section class="donation">
         <!-- 2 button -->       
         <div >
         <!-- Card1 -->
@@ -43,12 +43,12 @@
             <div class=" h-full">
                 <button class="flex flex-row gap-2 items-center rounded-xl bg-[#1111110D] px-4 py-2">
                     <img class="w-1/4" src="./assets/coin.png" alt="">
-                    <P class="text-[#111111B2] font-medium "><span>0</span> BDT</P>
+                    <P class="text-[#111111B2] font-medium "><span id="Noakhali_amount">0</span> BDT</P>
                 </button >
                 <p class="mt-5 font-bold text-xl">Donate for Flood at Noakhali, Bangladesh</p>
                 <p class="mt-8 text-[#111111B2] ">The recent floods in Noakhali have caused significant damage to <br>homes  infrastructure. Your donation will help provide essential<br>supplies and  to those affected by this disaster.Every contribution,<br>big or small, makes  difference. Please join us in supporting the <br>relief efforts and making a positive impact on the lives of those in need.</p>
 
-                <input class="mt-2 w-full border border-[#1111111A] p-3" type="text" id="" placeholder="Write Donation Amount">
+                <input class="mt-2 w-full border border-[#1111111A] p-3" type="text" id="WRITE_AMOUNT" placeholder="Write Donation Amount">
 
                 <button class="w-full mt-2 bg-[#B4F461] rounded-lg p-3 font-semibold text-xl all-btn">Donate Now</button>
                 
@@ -109,8 +109,9 @@
         </section>
 
         <!-- History section -->
-         <section class="mt-8 hidden">
-            <!-- 1st history -->
+         <!-- <section class="history mt-8 hidden">
+
+            
             <div class="border border-[#1111111A] p-8 rounded-xl">
                 <p><span>96500</span> Taka is Donated for famine-2024 at Feni, Bangladesh</p>
                 <p>Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
@@ -128,8 +129,11 @@
                 <p>Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
 
             </div>
-         </section>
+         </section> -->
 
+         <section id="history_info_container" class="history">
+            
+         </section>
     </main>
     <footer class="bg-[#F9F7F3] w-full h-24 ">
        
