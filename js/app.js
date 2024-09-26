@@ -60,9 +60,8 @@ function play(elementID1,elementID2,elementID3,HistoryID){
         const name=document.getElementById(elementID3).innerText
         const history_info=document.getElementById(HistoryID);
         const paragraph=document.createElement("p");
-        paragraph.style.border="2px solid rgba(17, 17, 17, 0.10)";
-        paragraph.style.marginTop="10px";
-        paragraph.style.text="10px"
+        paragraph.classList.add("text-xl","font-semibold","p-4","border","border-green-400","mt-3");
+       
         const currentDate = new Date();
         const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
         const formattedDate = currentDate.toLocaleDateString('en-US', options);
