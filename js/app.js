@@ -86,7 +86,13 @@ function play(elementID1,elementID2,HistoryID){
 
         const history_info=document.getElementById(HistoryID);
         const paragraph=document.createElement("p");
-        paragraph.innerText=`${donation} are doted`;
+        const currentDate = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const formattedDate = currentDate.toLocaleDateString('en-US', options);
+        paragraph.innerText=`${donation} are doted at ${formattedDate }`;
+
+
+        
         history_info.appendChild(paragraph);
         
 
