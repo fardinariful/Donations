@@ -25,14 +25,7 @@ showDonation();
 donationButton.addEventListener('click', showDonation);
 historyButton.addEventListener('click', showHistory);
 
-
-
-const allbtn = document.getElementsByClassName("all-btn");
-
-for (const btn of allbtn) {
-    btn.addEventListener("click", function (e) {
-          
-        // // Handle Noakhali donation
+// // Handle Noakhali donation
         // let Noakhali_donation = parseInt(document.getElementById("Noakhali_amount").innerText);
         // let Noakhali_input = parseInt(document.getElementById('WRITE_AMOUNT').value) || 0; // Default to 0 if input is invalid
         // Noakhali_donation += Noakhali_input;
@@ -54,9 +47,19 @@ for (const btn of allbtn) {
         // document.getElementById('WRITE_AMOUNT2').value = "";
         // document.getElementById('WRITE_AMOUNT3').value = "";
 
-        play("Noakhali_amount","WRITE_AMOUNT");
-        play("Feni_amount","WRITE_AMOUNT2");
-        play("quota_amount","WRITE_AMOUNT3");
+const allbtn = document.getElementsByClassName("all-btn");
+
+for (const btn of allbtn) {
+    btn.addEventListener("click", function (e) {
+          
+        
+        //history_info_container
+       
+        play("Noakhali_amount","WRITE_AMOUNT","history_info_container");
+        play("Feni_amount","WRITE_AMOUNT2","history_info_container");
+        play("quota_amount","WRITE_AMOUNT3","history_info_container");
+
+       
 
         
         
@@ -64,13 +67,32 @@ for (const btn of allbtn) {
     });
 }
 
-function play(elementID1,elementID2){
+function play(elementID1,elementID2,HistoryID){
     let donation = parseInt(document.getElementById(elementID1).innerText);
-    let input_value = parseInt(document.getElementById(elementID2).value) || 0;
-    donation += input_value;
-    document.getElementById(elementID1).innerText = donation;
-    document.getElementById(elementID2).value = "";
-    const amount=parseInt(document.getElementById("Total_amount").innerText);
-    const updated_total=amount-donation;
-    document.getElementById("Total_amount").innerText=updated_total;
+    let input_value = parseInt(document.getElementById(elementID2).value);
+    if(input_value > 0){
+        const amount=parseInt(document.getElementById("Total_amount").innerText);
+        const updated_total=amount-input_value;
+        if(updated_total < 0){
+            alert("amount short");
+            return;
+        }
+
+        donation += input_value;
+        document.getElementById(elementID1).innerText = donation;
+        document.getElementById(elementID2).value = "";
+
+        document.getElementById("Total_amount").innerText=updated_total;
+
+        const history_info=document.getElementById(HistoryID);
+        const paragraph=document.createElement("p");
+        paragraph.innerText=`${donation} are doted`;
+        history_info.appendChild(paragraph);
+        
+
+    }
+    
+
 }
+
+
