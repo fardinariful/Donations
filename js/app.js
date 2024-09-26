@@ -26,27 +26,46 @@ donationButton.addEventListener('click', showDonation);
 historyButton.addEventListener('click', showHistory);
 
 
-const allbtn=document.getElementsByClassName("all-btn");
-for(const btn of allbtn)
-{
-    btn.addEventListener("click",function(e){
 
-        
-         const Noakhali_donation=document.getElementById("Noakhali_amount").innerText;
-         const f=parseInt(Noakhali_donation);
-         const amount=document.getElementById("WRITE_AMOUNT").value;
-         const amount1=parseInt(amount);
-         document.getElementById("Noakhali_amount").innerText=Noakhali_donation;
-       
-        // const amount=document.getElementById("WRITE_AMOUNT").value;
-        // if(amount!==0 && typeof amount!=='string')
-        // {
-        //     console.log("dhorsi");
-        // }
-        // else{
-        //     console.log("mara khao")
-        // }
-    })
-   
- 
+const allbtn = document.getElementsByClassName("all-btn");
+
+for (const btn of allbtn) {
+    btn.addEventListener("click", function (e) {
+          
+        // // Handle Noakhali donation
+        // let Noakhali_donation = parseInt(document.getElementById("Noakhali_amount").innerText);
+        // let Noakhali_input = parseInt(document.getElementById('WRITE_AMOUNT').value) || 0; // Default to 0 if input is invalid
+        // Noakhali_donation += Noakhali_input;
+        // document.getElementById("Noakhali_amount").innerText = Noakhali_donation;
+
+        // // Handle Feni donation
+        // let Feni_donation = parseInt(document.getElementById("Feni_amount").innerText);
+        // let Feni_input = parseInt(document.getElementById('WRITE_AMOUNT2').value) || 0;
+        // Feni_donation += Feni_input;
+        // document.getElementById("Feni_amount").innerText = Feni_donation;
+
+        // // Handle Quota donation
+        // let quota_donation = parseInt(document.getElementById("quota_amount").innerText);
+        // let quota_input = parseInt(document.getElementById('WRITE_AMOUNT3').value) || 0;
+        // quota_donation += quota_input;
+        // document.getElementById("quota_amount").innerText = quota_donation;
+
+        // document.getElementById('WRITE_AMOUNT').value = "";
+        // document.getElementById('WRITE_AMOUNT2').value = "";
+        // document.getElementById('WRITE_AMOUNT3').value = "";
+
+        play("Noakhali_amount","WRITE_AMOUNT");
+        play("Feni_amount","WRITE_AMOUNT2");
+        play("quota_amount","WRITE_AMOUNT3");
+
+
+    });
+}
+
+function play(elementID1,elementID2){
+    let donation = parseInt(document.getElementById(elementID1).innerText);
+    let input_value = parseInt(document.getElementById(elementID2).value) || 0;
+    donation += input_value;
+    document.getElementById(elementID1).innerText = donation;
+    document.getElementById(elementID2).value = "";
 }
