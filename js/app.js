@@ -58,6 +58,8 @@ for (const btn of allbtn) {
         play("Feni_amount","WRITE_AMOUNT2");
         play("quota_amount","WRITE_AMOUNT3");
 
+        
+        
 
     });
 }
@@ -68,4 +70,7 @@ function play(elementID1,elementID2){
     donation += input_value;
     document.getElementById(elementID1).innerText = donation;
     document.getElementById(elementID2).value = "";
+    const amount=parseInt(document.getElementById("Total_amount").innerText);
+    const updated_total=amount-donation;
+    document.getElementById("Total_amount").innerText=updated_total;
 }
