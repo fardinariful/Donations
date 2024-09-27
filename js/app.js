@@ -29,7 +29,7 @@ const allbtn = document.getElementsByClassName("all-btn");
 
 for (const btn of allbtn) {
     btn.addEventListener("click", function (e) {
-          
+        my_modal_5.showModal();
         
         //history_info_container
        
